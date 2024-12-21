@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Cohort {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId // Correct native type for MongoDB
+  name     String
+  students Student[]
+}
+
+model Course {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId // Correct native type for MongoDB
+  name     String
+  teacherImageUrl String
+  students Student[]
+}
+
+model Student {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId // Correct native type for MongoDB
+  name       String
+  dateJoined DateTime @default(now())
+  lastLogin  DateTime @default(now())
+  status     Boolean @default(true)
+  cohortId   String   @db.ObjectId
+  cohort     Cohort   @relation(fields: [cohortId], references: [id])
+  courseId   String   @db.ObjectId
+  course     Course   @relation(fields: [courseId], references: [id])
+}
