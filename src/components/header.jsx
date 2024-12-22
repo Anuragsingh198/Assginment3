@@ -7,8 +7,8 @@ import { PiSlidersHorizontalLight } from "react-icons/pi";
 const Header = () => {
   return (
     <>
-    <div class="flex justify-between items-center h-[48px] bg-transparent">
-    <div class="flex items-center h-[30px] w-[50%] mx-6 px-3 space-x-2  bg-[#ffff] rounded-lg">
+    <div class="flex justify-between items-center  bg-transparent py-4 ">
+    <div class="flex items-center h-[48px] w-[60%]  px-3 space-x-2  bg-[#ffff] rounded-lg">
         <div class="flex items-center justify-center h-full  text-[#989898cc] ">
         <FiSearch />
         </div>
@@ -29,13 +29,13 @@ const Header = () => {
         <div  class ='h-2  w-2 rounded-full bg-red-500  absolute top-0 right-0'></div>
         <IoMdNotificationsOutline  class ='text-xl  text-[#989898cc]'  />
         </div>
-        <div class="h-[40px] w-[40px] overflow-hidden">
+        <div class="h-[35px] w-[35px] overflow-hidden">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-B4p4KbYF01UtLZdVDsTHTwiE-oDyuBBWvw&s" alt="user's image" class="object-contain w-full h-full" />
         </div>
 
 
         <div>
-            <p class='font-semibold  h-[26px] w-[129px] text-[18px]  overflow-hidden '>Anurag Singh</p>
+            <p class='font-semibold  h-[26px] w-[129px] text-[16px]  overflow-hidden text-left '>Adeline H. Dancy</p>
         </div>
 
     </div>
